@@ -1,0 +1,456 @@
+/* quitamos las margenes de todas las etiquetas */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* creaccion de variables css */
+:root{
+    /* colores */
+    --prymary-color : #357095;
+    --secondary-color : #000;
+    --tercercolor : #fff;
+    /* tamños de letra */
+    --titulos : 40px;
+    --parrafos : 20px;
+    /* fuentes */
+    --textos : 'PT Sans Narrow';
+    --ttitulo : 'kanit'
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url("../img/fondo.png");
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+header nav{
+    width: 70%;
+    margin: 0 550px;
+    display: flex ;
+    /* alinear horizontal */
+    justify-content: space-between ;
+    /* alinear vertical */
+    /* align-content: ; */
+    padding-top: 40px;
+}
+
+header nav .logoo{
+    position: absolute;
+    top: 18px;
+    left: 150px;
+    height:  120px;
+}
+
+header nav .menu{
+    display: flex;
+}
+
+nav .menu li{
+    margin: 0 20px;
+    list-style: none;
+}
+
+.menu li a{
+    color: #000;
+    font-size: 35px;
+    font-family: var(--ttitulo);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .5s;
+}
+
+.menu li a:hover{
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+header #hero{
+    width: 50%;
+    min-width: 600px;
+    margin: 250px auto;
+    text-align: center;
+}
+
+header #hero img{
+    height: 80px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+header #hero img:hover{
+    /* transform: rotate(360deg); */
+    transform: scale(0.6);
+}
+
+header #hero h1{
+    color: var(--secondary-color);
+    font-family: var(--ttitulo);
+    font-weight: 300px;
+    font-size: 100px;
+}
+
+header #hero p{
+    font-size: 40px;
+    font-family: var(--textos);
+    font-weight: 100px;
+    color: #414141;
+    margin-top: 30px ;
+}
+
+/* PARA HACER UN BOTON CON LUZ EN EL FONDO */
+/* header #hero button{
+    background: var(--prymary-color);
+    cursor: pointer;
+    border: none;
+    margin-top: 35px;
+    padding: 16px 25px;
+    color: var(--secondary-color);
+    font-size: 30px;
+    font-family: var(--ttitulo);
+    font-weight: bold;
+    position: relative;
+    border-radius: 13px;
+}
+ 
+header #hero button:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000,#357095,#666,#fff);
+    background-size: 800%;
+    border-radius: 13px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0%{
+        background-position: 0 0;
+    }
+
+    50%{
+        background-position: 400% 0;
+    }
+
+    100%{
+        background-position: 0 0;
+    }
+} */
+
+header #hero button a{
+    text-decoration: none;
+    color: #414141;
+}
+
+header #hero button{
+    margin-top: 110px;
+    background: var(--prymary-color);
+    padding: 10px;
+    font-size: 30px;
+    color: #999;
+    border-color: transparent;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+header #hero button:hover{
+    background: #000;
+    border-radius: 100px;
+} 
+
+main{
+    width: 100%;
+    position: relative;
+}
+
+#introduccion{
+    width: 100%;
+    font-size: 30px;
+    font-family: var(--ttitulo);
+    text-align: center;
+    padding: 80px 0;
+    background: #fff;
+}
+
+#introduccion h2{
+    font-size: var(--titulos);
+    font-family: var(--textos);
+    /* grosor del texto */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#introduccion p{
+    font-size: var(--parrafos);
+}
+
+#introduccion .slider-box{
+    width: 1280px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+#introduccion .slider-box ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+#introduccion .slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+#introduccion .slider-box .texto{
+    text-align: center;
+    padding: 0 250px;
+}
+
+.slider-box .texto h3{
+     font-size: 40px;
+     position: absolute;
+     top: 40px;
+     left: 480px;
+     color: #000;
+     margin-bottom:  35px;
+}
+
+.slider-box .texto #p1{
+   color: #357095;
+   font-size: 25px ;
+}
+
+#introduccion .slider-box img{
+    width: 70%;
+}
+
+@keyframes slide{
+    0%{ margin-left: 0;}
+    20%{ margin-left: 0;}
+
+    25%{ margin-left: -100%;}
+    45%{ margin-left: -100%;}
+
+    50%{ margin-left: -200%;}
+    70%{ margin-left: -200%;}
+
+    75%{ margin-left: -300%;}
+    100%{ margin-left: -300%;}
+}
+/* CARRUSEL DE BARRA -NO AUTOMATICO */
+/* #introduccion .carrusel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+
+#introduccion .carrusel .elemento{
+    flex: 1 0 auto;
+    margin: 0 50px;
+    background: red;
+    width: 500px;
+    height: 500px;
+} */
+
+#enfermedades{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 100px 0 40px;
+    background-color: #357095;
+    background-size: center;
+    background-position: center; 
+}
+
+#enfermedades h2{
+    font-size: 50px;
+    color: var(--tercercolor);
+    font-family: var(--ttitulo);
+    margin-bottom: 100px;
+    font-weight: 500;
+}
+
+#enfermedades .fila{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 80px auto;
+    
+}
+
+.fila .sec-enfe{
+    width: 50%;
+    text-align: center;
+}
+
+.fila .sec-enfe h3{
+    color: #fff;
+    font-size: 30px;
+    font-family: var(--textos);
+    text-transform: uppercase;
+}
+
+.fila .sec-enfe img{
+    border-radius: 200px;
+}
+
+.fila .sec-enfe img{
+    height: 300px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.fila .sec-enfe img:hover{
+    transform: scale(0.6);
+}
+
+#tratamientos{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 1300px; 
+    height: 800px;
+}
+#tratamientos h2{
+    margin: 400px 150px 0 0;
+    font-family: var(--ttitulo);
+    font-size: 35px;
+
+}
+#tratamientos img{
+    width:10px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease; 
+    
+}
+#tratamientos img:hover {
+    cursor: crosshair;
+    width: 500px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+#contacto{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 190px 0 150px;
+    background: url(../img/foondo.jpg);
+    background-size: cover;
+}
+
+#contacto h2{
+    font-size: 50px;
+    font-family: var(--ttitulo);
+    margin-bottom: 60px;
+}
+
+#contacto p{
+    font-size: 30px;
+    font-family: var(--textos);
+    margin-bottom: 90px;
+}
+
+#contacto form{
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+#contacto form .fila{
+    display: flex;
+}
+
+form .fila input{
+    width: 50%;
+    padding: 8px 12px;
+    font-size: var(--parrafos );
+    margin: 10px 20px;
+}
+
+form .fila select{
+    width: 53%;
+    padding: 8px 12px;
+    font-size: var(--parrafos );
+    margin: 10px 20px;
+}
+
+form button{
+    background: var(--prymary-color);
+    color:var(--tercercolor);
+    margin-top: 80px;
+    padding: 12px 20px;
+    font-size: 22px;
+    border-radius: 4px;
+    /* border: transparent; */
+    
+}
+
+#personal{
+    width: 100%;
+    text-align: center;
+    padding: 100px 0;
+    background: #fff;
+}
+
+#personal h2{
+    font-size: 45px;
+    /* grosor del texto */
+    font-weight: 700;
+    font-family: var(--ttitulo);
+    margin-bottom: 40px;
+}
+
+#personal p{
+    font-size: 30px;
+    font-family: var(--textos);
+    color: #000;
+}
+
+#personal .fila{
+    width: 70%;
+    min-width: 1000px;
+    display: flex;
+    margin: 40px auto;
+    justify-content: space-around;
+}
+
+#personal .fila .col-plan{
+    position: relative;
+}
+
+.fila .col-plan img{
+    transition: .5s;
+    width: 90%;
+    border-radius: 100%;
+    margin-bottom: 40px;
+}
+
+footer{
+    background: var(--prymary-color);
+    font-family: var(--ttitulo);
+    text-align: center;
+    padding: 30px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+}
